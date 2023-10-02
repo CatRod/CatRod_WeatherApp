@@ -22,7 +22,6 @@ if (minutes < 10) {
 dayHour.innerHTML = `${today}, ${hours}h${minutes}`;
 
 function showTemperature(response) {
-  console.log(response);
   let currentTemperature = document.querySelector("#temperature");
   let roundTemperature = Math.round(response.data.main.temp);
   currentTemperature.innerHTML = `${roundTemperature}º C`;
@@ -38,6 +37,12 @@ function showTemperature(response) {
   cityNow.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function city(event) {
