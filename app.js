@@ -75,13 +75,13 @@ function displayFahrhenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   let fahrenheitTemperature = (celsiusConvertion * 9) / 5 + 32;
-  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}ºF`;
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}º F`;
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${Math.round(celsiusConvertion)}ºC`;
+  temperatureElement.innerHTML = `${Math.round(celsiusConvertion)}º C`;
 }
 
 let currentCity = document.querySelector("#search-form");
