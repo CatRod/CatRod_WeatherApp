@@ -43,6 +43,8 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusConvertion = response.data.main.temp;
 }
 
 function city(event) {
@@ -69,6 +71,19 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+function displayFahrhenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusConvertion * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}ºF`;
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = `${Math.round(celsiusConvertion)}ºC`;
+}
+
 let currentCity = document.querySelector("#search-form");
 currentCity.addEventListener("submit", city);
 
@@ -77,3 +92,13 @@ currentCityButton.addEventListener("click", city);
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", showLocation);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrhenheitTemperature);
+
+let celsiusTemperature = document.querySelector("#celsius-link");
+celsiusTemperature.addEventListener("click", displayCelsiusTemperature);
+
+let celsiusConvertion = null;
+
+citySearch("tokyo");
