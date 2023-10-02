@@ -47,6 +47,14 @@ function showTemperature(response) {
   celsiusConvertion = response.data.main.temp;
 }
 
+function search(city) {
+  let apiKey = `0dc40d3d7cda209ca40e77430c74cf57`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showTemperature);
+}
+search("loures");
+
 function city(event) {
   event.preventDefault();
   let citySearch = document.querySelector("#city-search");
@@ -100,5 +108,3 @@ let celsiusTemperature = document.querySelector("#celsius-link");
 celsiusTemperature.addEventListener("click", displayCelsiusTemperature);
 
 let celsiusConvertion = null;
-
-citySearch("tokyo");
