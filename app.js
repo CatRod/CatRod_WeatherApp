@@ -21,6 +21,13 @@ if (minutes < 10) {
 
 dayHour.innerHTML = `${today}, ${hours}h${minutes}`;
 
+function getForecast(coordinates) {
+  let apiKey = "3f6be1c407b0d9d1933561808db358ba";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   let currentTemperature = document.querySelector("#temperature");
   let roundTemperature = Math.round(response.data.main.temp);
@@ -45,6 +52,11 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celsiusConvertion = response.data.main.temp;
+  getForecast(response.data.coord);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
 }
 
 function search(city) {
