@@ -24,7 +24,7 @@ dayHour.innerHTML = `${today}, ${hours}h${minutes}`;
 function getForecast(coordinates) {
   let apiKey = "3f6be1c407b0d9d1933561808db358ba";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
