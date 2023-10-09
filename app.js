@@ -55,6 +55,14 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
   console.log(response);
@@ -67,7 +75,7 @@ function displayForecast(response) {
     response.data.daily[1].temp.min
   )}ºC`;
   let firstDayDate = document.querySelector("#first-day");
-  //FALTA AQUI DEFINIR O DIA...
+  firstDayDate.innerHTML = formatDay(response.data.daily[1].dt);
   let firstDayIcon = document.querySelector("#first-day-icon");
   firstDayIcon.setAttribute(
     "src",
@@ -83,7 +91,7 @@ function displayForecast(response) {
     response.data.daily[2].temp.min
   )}ºC`;
   let secondDayDate = document.querySelector("#second-day");
-  //FALTA AQUI DEFINIR O DIA...
+  secondDayDate.innerHTML = formatDay(response.data.daily[2].dt);
   let secondDayIcon = document.querySelector("#second-day-icon");
   secondDayIcon.setAttribute(
     "src",
@@ -99,7 +107,7 @@ function displayForecast(response) {
     response.data.daily[3].temp.min
   )}ºC`;
   let thirdDayDate = document.querySelector("#third-day");
-  //FALTA AQUI DEFINIR O DIA...
+  thirdDayDate.innerHTML = formatDay(response.data.daily[3].dt);
   let thirdDayIcon = document.querySelector("#third-day-icon");
   thirdDayIcon.setAttribute(
     "src",
@@ -115,7 +123,7 @@ function displayForecast(response) {
     response.data.daily[4].temp.min
   )}ºC`;
   let forthDayDate = document.querySelector("#forth-day");
-  //FALTA AQUI DEFINIR O DIA...
+  forthDayDate.innerHTML = formatDay(response.data.daily[4].dt);
   let forthDayIcon = document.querySelector("#forth-day-icon");
   forthDayIcon.setAttribute(
     "src",
@@ -131,7 +139,7 @@ function displayForecast(response) {
     response.data.daily[5].temp.min
   )}ºC`;
   let fifthDayDate = document.querySelector("#fifth-day");
-  //FALTA AQUI DEFINIR O DIA...
+  fifthDayDate.innerHTML = formatDay(response.data.daily[5].dt);
   let fifthDayIcon = document.querySelector("#fifth-day-icon");
   fifthDayIcon.setAttribute(
     "src",
