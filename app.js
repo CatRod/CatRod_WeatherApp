@@ -68,82 +68,82 @@ function displayForecast(response) {
   console.log(response);
   let firstDayMaxTemp = document.querySelector("#first-day-max");
   firstDayMaxTemp.innerHTML = `${Math.round(
-    response.data.daily[1].temp.max
+    response.data.daily[0].temp.max
   )}ºC`;
   let firstDayMinTemp = document.querySelector("#first-day-min");
   firstDayMinTemp.innerHTML = `${Math.round(
-    response.data.daily[1].temp.min
+    response.data.daily[0].temp.min
   )}ºC`;
   let firstDayDate = document.querySelector("#first-day");
-  firstDayDate.innerHTML = formatDay(response.data.daily[1].dt);
+  firstDayDate.innerHTML = formatDay(response.data.daily[0].dt);
   let firstDayIcon = document.querySelector("#first-day-icon");
   firstDayIcon.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.daily[1].weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.daily[0].weather[0].icon}@2x.png`
   );
 
   let secondDayMaxTemp = document.querySelector("#second-day-max");
   secondDayMaxTemp.innerHTML = `${Math.round(
-    response.data.daily[2].temp.max
+    response.data.daily[1].temp.max
   )}ºC`;
   let secondDayMinTemp = document.querySelector("#second-day-min");
   secondDayMinTemp.innerHTML = `${Math.round(
-    response.data.daily[2].temp.min
+    response.data.daily[1].temp.min
   )}ºC`;
   let secondDayDate = document.querySelector("#second-day");
-  secondDayDate.innerHTML = formatDay(response.data.daily[2].dt);
+  secondDayDate.innerHTML = formatDay(response.data.daily[1].dt);
   let secondDayIcon = document.querySelector("#second-day-icon");
   secondDayIcon.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.daily[2].weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.daily[1].weather[0].icon}@2x.png`
   );
 
   let thirdDayMaxTemp = document.querySelector("#third-day-max");
   thirdDayMaxTemp.innerHTML = `${Math.round(
-    response.data.daily[3].temp.max
+    response.data.daily[2].temp.max
   )}ºC`;
   let thirdDayMinTemp = document.querySelector("#third-day-min");
   thirdDayMinTemp.innerHTML = `${Math.round(
-    response.data.daily[3].temp.min
+    response.data.daily[2].temp.min
   )}ºC`;
   let thirdDayDate = document.querySelector("#third-day");
-  thirdDayDate.innerHTML = formatDay(response.data.daily[3].dt);
+  thirdDayDate.innerHTML = formatDay(response.data.daily[2].dt);
   let thirdDayIcon = document.querySelector("#third-day-icon");
   thirdDayIcon.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.daily[3].weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.daily[2].weather[0].icon}@2x.png`
   );
 
   let forthDayMaxTemp = document.querySelector("#forth-day-max");
   forthDayMaxTemp.innerHTML = `${Math.round(
-    response.data.daily[4].temp.max
+    response.data.daily[3].temp.max
   )}ºC`;
   let forthDayMinTemp = document.querySelector("#forth-day-min");
   forthDayMinTemp.innerHTML = `${Math.round(
-    response.data.daily[4].temp.min
+    response.data.daily[3].temp.min
   )}ºC`;
   let forthDayDate = document.querySelector("#forth-day");
-  forthDayDate.innerHTML = formatDay(response.data.daily[4].dt);
+  forthDayDate.innerHTML = formatDay(response.data.daily[3].dt);
   let forthDayIcon = document.querySelector("#forth-day-icon");
   forthDayIcon.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.daily[4].weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.daily[3].weather[0].icon}@2x.png`
   );
 
   let fifthDayMaxTemp = document.querySelector("#fifth-day-max");
   fifthDayMaxTemp.innerHTML = `${Math.round(
-    response.data.daily[5].temp.max
+    response.data.daily[4].temp.max
   )}ºC`;
   let fifthDayMinTemp = document.querySelector("#fifth-day-min");
   fifthDayMinTemp.innerHTML = `${Math.round(
-    response.data.daily[5].temp.min
+    response.data.daily[4].temp.min
   )}ºC`;
   let fifthDayDate = document.querySelector("#fifth-day");
-  fifthDayDate.innerHTML = formatDay(response.data.daily[5].dt);
+  fifthDayDate.innerHTML = formatDay(response.data.daily[4].dt);
   let fifthDayIcon = document.querySelector("#fifth-day-icon");
   fifthDayIcon.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.daily[5].weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.daily[4].weather[0].icon}@2x.png`
   );
 }
 
