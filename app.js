@@ -57,6 +57,7 @@ function showTemperature(response) {
 
 function displayForecast(response) {
   console.log(response.data.daily);
+  console.log(response);
   let firstDayMaxTemp = document.querySelector("#first-day-max");
   firstDayMaxTemp.innerHTML = `${Math.round(
     response.data.daily[1].temp.max
@@ -68,7 +69,10 @@ function displayForecast(response) {
   let firstDayDate = document.querySelector("#first-day");
   //FALTA AQUI DEFINIR O DIA...
   let firstDayIcon = document.querySelector("#first-day-icon");
-  //FALTA O ICON
+  firstDayIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.daily[1].weather[0].icon}@2x.png`
+  );
 
   let secondDayMaxTemp = document.querySelector("#second-day-max");
   secondDayMaxTemp.innerHTML = `${Math.round(
@@ -81,7 +85,10 @@ function displayForecast(response) {
   let secondDayDate = document.querySelector("#second-day");
   //FALTA AQUI DEFINIR O DIA...
   let secondDayIcon = document.querySelector("#second-day-icon");
-  //FALTA O ICON
+  secondDayIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.daily[2].weather[0].icon}@2x.png`
+  );
 
   let thirdDayMaxTemp = document.querySelector("#third-day-max");
   thirdDayMaxTemp.innerHTML = `${Math.round(
@@ -94,7 +101,10 @@ function displayForecast(response) {
   let thirdDayDate = document.querySelector("#third-day");
   //FALTA AQUI DEFINIR O DIA...
   let thirdDayIcon = document.querySelector("#third-day-icon");
-  //FALTA O ICON
+  thirdDayIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.daily[3].weather[0].icon}@2x.png`
+  );
 
   let forthDayMaxTemp = document.querySelector("#forth-day-max");
   forthDayMaxTemp.innerHTML = `${Math.round(
@@ -107,7 +117,10 @@ function displayForecast(response) {
   let forthDayDate = document.querySelector("#forth-day");
   //FALTA AQUI DEFINIR O DIA...
   let forthDayIcon = document.querySelector("#forth-day-icon");
-  //FALTA O ICON
+  forthDayIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.daily[4].weather[0].icon}@2x.png`
+  );
 
   let fifthDayMaxTemp = document.querySelector("#fifth-day-max");
   fifthDayMaxTemp.innerHTML = `${Math.round(
@@ -120,7 +133,10 @@ function displayForecast(response) {
   let fifthDayDate = document.querySelector("#fifth-day");
   //FALTA AQUI DEFINIR O DIA...
   let fifthDayIcon = document.querySelector("#fifth-day-icon");
-  //FALTA O ICON
+  fifthDayIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.daily[5].weather[0].icon}@2x.png`
+  );
 }
 
 function search(city) {
