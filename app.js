@@ -57,6 +57,70 @@ function showTemperature(response) {
 
 function displayForecast(response) {
   console.log(response.data.daily);
+  let firstDayMaxTemp = document.querySelector("#first-day-max");
+  firstDayMaxTemp.innerHTML = `${Math.round(
+    response.data.daily[1].temp.max
+  )}ºC`;
+  let firstDayMinTemp = document.querySelector("#first-day-min");
+  firstDayMinTemp.innerHTML = `${Math.round(
+    response.data.daily[1].temp.min
+  )}ºC`;
+  let firstDayDate = document.querySelector("#first-day");
+  //FALTA AQUI DEFINIR O DIA...
+  let firstDayIcon = document.querySelector("#first-day-icon");
+  //FALTA O ICON
+
+  let secondDayMaxTemp = document.querySelector("#second-day-max");
+  secondDayMaxTemp.innerHTML = `${Math.round(
+    response.data.daily[2].temp.max
+  )}ºC`;
+  let secondDayMinTemp = document.querySelector("#second-day-min");
+  secondDayMinTemp.innerHTML = `${Math.round(
+    response.data.daily[2].temp.min
+  )}ºC`;
+  let secondDayDate = document.querySelector("#second-day");
+  //FALTA AQUI DEFINIR O DIA...
+  let secondDayIcon = document.querySelector("#second-day-icon");
+  //FALTA O ICON
+
+  let thirdDayMaxTemp = document.querySelector("#third-day-max");
+  thirdDayMaxTemp.innerHTML = `${Math.round(
+    response.data.daily[3].temp.max
+  )}ºC`;
+  let thirdDayMinTemp = document.querySelector("#third-day-min");
+  thirdDayMinTemp.innerHTML = `${Math.round(
+    response.data.daily[3].temp.min
+  )}ºC`;
+  let thirdDayDate = document.querySelector("#third-day");
+  //FALTA AQUI DEFINIR O DIA...
+  let thirdDayIcon = document.querySelector("#third-day-icon");
+  //FALTA O ICON
+
+  let forthDayMaxTemp = document.querySelector("#forth-day-max");
+  forthDayMaxTemp.innerHTML = `${Math.round(
+    response.data.daily[4].temp.max
+  )}ºC`;
+  let forthDayMinTemp = document.querySelector("#forth-day-min");
+  forthDayMinTemp.innerHTML = `${Math.round(
+    response.data.daily[4].temp.min
+  )}ºC`;
+  let forthDayDate = document.querySelector("#forth-day");
+  //FALTA AQUI DEFINIR O DIA...
+  let forthDayIcon = document.querySelector("#forth-day-icon");
+  //FALTA O ICON
+
+  let fifthDayMaxTemp = document.querySelector("#fifth-day-max");
+  fifthDayMaxTemp.innerHTML = `${Math.round(
+    response.data.daily[5].temp.max
+  )}ºC`;
+  let fifthDayMinTemp = document.querySelector("#fifth-day-min");
+  fifthDayMinTemp.innerHTML = `${Math.round(
+    response.data.daily[5].temp.min
+  )}ºC`;
+  let fifthDayDate = document.querySelector("#fifth-day");
+  //FALTA AQUI DEFINIR O DIA...
+  let fifthDayIcon = document.querySelector("#fifth-day-icon");
+  //FALTA O ICON
 }
 
 function search(city) {
